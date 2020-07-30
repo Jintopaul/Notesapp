@@ -1,84 +1,95 @@
+Notes app installation
+
+	Open the app in terminal,
+
+		$ composer install
+		$ php artisan key:generate
+		$ php artisan migrate
+		$ php artisan passport:install
+		$ php artisan serve
+
+
 Notes app api documentation
 
 	Via Postman
 
-For signup
+	For signup
 
-	POST - http://127.0.0.1:8000/api/signup
+		POST - http://127.0.0.1:8000/api/signup
 
-	Body -> raw -> json -> {
-							    "first_name": "Foo",
-							    "last_name": "bar",
-							    "email": "foo@gm.com",
-							    "password": "12345678",
-							    "address": "Kerala, India"
-							}
+		Body -> raw -> json -> {
+								    "first_name": "Foo",
+								    "last_name": "bar",
+								    "email": "foo@gm.com",
+								    "password": "12345678",
+								    "address": "Kerala, India"
+								}
 
-For login
-    
-    POST - http://127.0.0.1:8000/api/login
+	For login
+	    
+	    POST - http://127.0.0.1:8000/api/login
 
-    Body -> raw -> json -> {
-							    "email": "foo@gm.com",
-							    "password": "12345678"
-							}
-
-
-For logout 
-
-	GET - http://127.0.0.1:8000/api/logout
-
-	Headers -> Authorization : Bearer “token"
+	    Body -> raw -> json -> {
+								    "email": "foo@gm.com",
+								    "password": "12345678"
+								}
 
 
+	For logout 
 
-For user profile
+		GET - http://127.0.0.1:8000/api/logout
 
-	GET - http://127.0.0.1:8000/api/user
-
-	Headers -> Authorization : Bearer “token"
+		Headers -> Authorization : Bearer “token"
 
 
 
-For create notes
+	For user profile
 
-	POST - http://127.0.0.1:8000/api/notes
+		GET - http://127.0.0.1:8000/api/user
 
-	Headers -> Authorization : Bearer “token"
-
-	Body -> form-data
-				[
-					key- file (upload file)
-					key- text  "Foo"
-				]
-
-For all notes
-
-	GET - http://127.0.0.1:8000/api/notes
-
-	Headers -> Authorization : Bearer “token"
+		Headers -> Authorization : Bearer “token"
 
 
-For single note
 
-	GET - http://127.0.0.1:8000/api/notes/2
+	For create notes
 
-	Headers -> Authorization : Bearer “token"
+		POST - http://127.0.0.1:8000/api/notes
+
+		Headers -> Authorization : Bearer “token"
+
+		Body -> form-data
+					[
+						key- file (upload file)
+						key- text  "Foo"
+					]
+
+	For all notes
+
+		GET - http://127.0.0.1:8000/api/notes
+
+		Headers -> Authorization : Bearer “token"
 
 
-For update note
+	For single note
 
-	put - http://127.0.0.1:8000/api/notes/2
+		GET - http://127.0.0.1:8000/api/notes/2
 
-	Headers -> Authorization : Bearer “token"
+		Headers -> Authorization : Bearer “token"
 
 
-	Body -> raw -> json -> {
-							    "text": "bar",
-							}
+	For update note
 
-For delete note
+		put - http://127.0.0.1:8000/api/notes/2
 
-	delete - http://127.0.0.1:8000/api/notes/2
-	
-	Headers -> Authorization : Bearer “token"
+		Headers -> Authorization : Bearer “token"
+
+
+		Body -> raw -> json -> {
+								    "text": "bar",
+								}
+
+	For delete note
+
+		delete - http://127.0.0.1:8000/api/notes/2
+		
+		Headers -> Authorization : Bearer “token"
